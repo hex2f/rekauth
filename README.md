@@ -121,3 +121,5 @@ Say you want to get the username the token is assigned to.
 > ``` $myusername = strtolower($result[0]["user"]); ```
 
 Now you can use ```'$myusername'``` to access data in other tables from your database.
+
+*Disclaimer: RekkyRek (Hampus Lundqvist) is not responsible for any leaked user information as it is your responsibility to implement  rekauth securely*
