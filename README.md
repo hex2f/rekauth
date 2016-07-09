@@ -21,3 +21,22 @@ An open source token based authentication system for PHP
 > ```create table tokens (user varchar(*), expire timestamp, token varchar(265))```
 
 6. Now, once again, add a ; and press enter. You're done! Horray! (At least on the database side of things.)
+
+####Now we need to setup the authentication system in PHP.
+*Note: Make sure your server is running at least PHP 5.*
+
+1. Copy the rekauth folder to your project.
+
+2. Open the config.php file (Inside the rekauth folder) in your favorite text editor.
+
+3. First we need to edit the Database Settings.
+> *$servername should be the ip to your database.*
+*$username and $password needs to be the login to your database.*
+*And $dbname has to be the same to the one we mede in out first command when setting up the database.*
+
+4. Now just go through everything and change it to your needs. They should be named pretty logicaly, so i think you can figure it out. **Note: Do not chang the $password_encrypt_cost unless you know what you are doing.**
+
+5. And after that, well, you're done! Now follow the steps bellow to see how to use rekauth.
+
+##Using rekauth
+*This section is not done yet*
