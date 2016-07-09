@@ -39,4 +39,85 @@ An open source token based authentication system for PHP
 5. And after that, well, you're done! Now follow the steps bellow to see how to use rekauth.
 
 ##Using rekauth
-*This section is not done yet*
+####Login
+
+**How do i implement rekauth/login**? Simple, You just have a form with two text fields and **POST** it to rekauth/login.php
+
+######Post names
+> Username = u
+
+> Password = p
+
+######Example
+> ```<form action="rekauth/login.php" method="POST"> ```
+
+>```  Username: <input name="n" type="text"/> ```
+
+>```  Password: <input name="p" type="password"/> ```
+
+>```  <input type="submit" value="login"/> ```
+
+>``` </form> ```
+
+If login is successful it will set a cookie with the access token (You use this to verify the user instead of username and password in you application). If failed it will return the error string you made in *rekauth/config.php*.
+*(If you are using JS only in your app you can add 'echo $token' in the login system on line 62 and 67 then save the token with localStorage)*
+
+####Register
+
+**How do i implement rekauth/register?** Simple, You just have a form with two text fields and **POST** it to rekauth/login.php
+
+######Post names
+> Username = u
+
+> Password = p
+
+> Password Confirm = pc
+
+> Mail = m
+
+> Mail Confirm = mc
+
+
+######Example
+> ``` <form action="rekauth/register.php" method="POST"> ```
+
+>```  Username: <input name="n" type="text"/> ```
+
+>```  Password: <input name="p" type="password"/> ```
+
+>```  Confirm Password: <input name="pc" type="password"/> ```
+
+>```  Email: <input name="m" type="email"/> ```
+
+>```  Confirm Email: <input name="mc" type="email"/> ```
+
+>```  <input type="submit" value="login"/> ```
+
+>``` </form> ```
+
+If registration was successful it will save the [Password Hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) and all other user details to your database then redirect the user to the login page you set in *rekauth/config.php* where they can login to get their access token.
+
+####Using tokens
+
+If the user successfully compleats a login they will recive an access token (Default: Stored in a cookie by the name of 'token').
+This should be used to authticate the user when preforming functions inside your application instead of username and password.
+
+######Table Names
+>'user': The username the token is assigned to.
+
+>'expire': The timestamp the token will expire.
+
+>'token': The access token.
+
+######Example
+Say you want to get the username the token is assigned to.
+
+> ``` $dbquery = $conn->prepare("SELECT * FROM tokens WHERE token = :token"); ```
+
+> ``` $dbquery->execute(array("token"=>$_COOKIE["token"])); ```
+
+> ``` $result = $dbquery->fetchAll(); ```
+
+> ``` $myusername = strtolower($result[0]["user"]); ```
+
+Now you can use ```'$myusername'``` to access data in other tables from your database.
