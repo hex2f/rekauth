@@ -122,4 +122,6 @@ Say you want to get the username the token is assigned to.
 
 Now you can use ```'$myusername'``` to access data in other tables from your database.
 
-*Disclaimer: RekkyRek (Hampus Lundqvist) is not responsible for any leaked user information as it is your responsibility to implement  rekauth securely*
+**THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.**
+
+*© 2016 Hampus Lundqvist*
