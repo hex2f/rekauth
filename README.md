@@ -2,6 +2,12 @@
 
 An open source token based authentication system for PHP
 
+##Download
+
+>Method 1 (Manual): Download zip and extract it to your project.
+
+>Method 2 (Composer): ```composer require rekkyrek/rekauth```
+
 ## Setup
 
 ####First you need to make a database for your rekauth table.
