@@ -1,0 +1,8 @@
+{
+    "name": "rekkyrek/rekauth",
+    "description": "A open source token based authentication system",
+    "require": {
+        "php": "^5.1.0 || ^7.0",
+        "rekkyrek/rekauth": "1.*"
+    }
+}
